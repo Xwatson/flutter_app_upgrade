@@ -124,7 +124,8 @@ public class FlutterAppUpgradePlugin : FlutterPlugin, MethodCallHandler, Activit
       if (nameEmpty || classEmpty) {
         goToMarket.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
       } else {
-        goToMarket.setClassName(marketPackageName, marketClassName)
+        //goToMarket.setClassName(marketPackageName, marketClassName)
+        goToMarket.setClassName(marketPackageName.toString(), marketClassName.toString()) //添加.toString()
       }
       context.startActivity(goToMarket)
     } catch (e: ActivityNotFoundException) {
